@@ -89,7 +89,7 @@ public class TetrisBlock : MonoBehaviour
             }
         }
 
-        if (Time.time - _previousTime > (Input.GetKey(KeyCode.DownArrow) ? fallTime/ 10 : fallTime))
+        if (Time.time - _previousTime > (Input.GetKey(KeyCode.DownArrow) ? fallTime / 10 : fallTime))
         {
             transform.position += new Vector3(0, -1, 0);
 
@@ -106,7 +106,7 @@ public class TetrisBlock : MonoBehaviour
 
     private void AddToGrid()
     {
-        foreach(Transform children in transform)
+        foreach (Transform children in transform)
         {
             int roundedX = Mathf.RoundToInt(children.transform.position.x);
             int roundedY = Mathf.RoundToInt(children.transform.position.y);
@@ -117,32 +117,24 @@ public class TetrisBlock : MonoBehaviour
 
     bool ValidMove()
     {
-        foreach (Transform children in transform) { 
-        int roundedX = Mathf.RoundToInt(children.transform.position.x);
-        int roundedY = Mathf.RoundToInt(children.transform.position.y);
+        foreach (Transform children in transform)
+        {
+            int roundedX = Mathf.RoundToInt(children.transform.position.x);
+            int roundedY = Mathf.RoundToInt(children.transform.position.y);
 
-            if (!canTotalyTurn || cLaL)
+
+            if (roundedX <= 0 || roundedX >= width)
             {
-                if (roundedX <= 0 || roundedX >= width)
-                {
-                    return false;
-                }
+                return false;
             }
 
-            if (canTotalyTurn && !cLaL)
-            {
-                if ((roundedX <= 1.25f || roundedX >= 10.75f))
-                {
-                    return false;
-                }
-            }
 
             if (roundedY <= 0f)
             {
                 return false;
             }
 
-            if (grid[roundedX,roundedY] != null)
+            if (grid[roundedX, roundedY] != null)
             {
                 return false;
             }
