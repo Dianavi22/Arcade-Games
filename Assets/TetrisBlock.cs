@@ -132,7 +132,7 @@ public class TetrisBlock : MonoBehaviour
 
     private void DeleteLine(int i)
     {
-
+        print("Delete");
         for (int j = 0; j < width; j++)
         {
             Destroy(grid[j, i].gameObject);
@@ -142,7 +142,7 @@ public class TetrisBlock : MonoBehaviour
 
     void RowDown(int i)
     {
-        for (int y = 0; y < height; y++)
+        for (int y = i; y < height; y++)
         {
             for (int j = 0; j < width; j++)
             {
@@ -162,18 +162,7 @@ public class TetrisBlock : MonoBehaviour
         {
             int roundedX = Mathf.RoundToInt(children.transform.position.x);
             int roundedY = Mathf.RoundToInt(children.transform.position.y);
-
-            
                 grid[roundedX, roundedY] = children;
-
-                for (int i = 0; i < grid.Length; i++)
-                {
-                    print(grid[roundedX, roundedY]);
-
-                }
-            
-
-           
         }
         
     }
