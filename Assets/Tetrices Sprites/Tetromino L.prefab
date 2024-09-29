@@ -383,7 +383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7928592621910455071
 Transform:
   m_ObjectHideFlags: 0
@@ -418,4 +418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPoint: {x: 0, y: 0, z: 0}
   fallTime: 0.8
-  _rotatePoint: {fileID: 0}
+  canTotalyTurn: 1
+  primary: 1
+  canTurn: 1
+  cLaS: 0
+  cLaL: 1

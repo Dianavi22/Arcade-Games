@@ -418,4 +418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPoint: {x: 0, y: 0, z: 0}
   fallTime: 0.8
-  _rotatePoint: {fileID: 6266995679405566577}
+  height: 100
+  width: 100
+  canTotalyTurn: 1
+  primary: 1
+  canTurn: 1

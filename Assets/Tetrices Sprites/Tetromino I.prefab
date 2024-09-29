@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4793574525974797372
 Transform:
   m_ObjectHideFlags: 0
@@ -250,7 +250,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPoint: {x: 0, y: 0, z: 0}
   fallTime: 0.8
-  _rotatePoint: {fileID: 0}
+  height: 100
+  width: 100
+  canTotalyTurn: 0
+  primary: 1
+  canTurn: 1
 --- !u!1 &5309105017554565641
 GameObject:
   m_ObjectHideFlags: 0

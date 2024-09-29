@@ -208,10 +208,42 @@ Transform:
   m_GameObject: {fileID: 141922904}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.228432, y: -0.029652596, z: -24.189337}
+  m_LocalPosition: {x: 5.8830414, y: 9.444909, z: -22.669558}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &160321678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 160321679}
+  m_Layer: 0
+  m_Name: Grille
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &160321679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160321678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 717478512}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &717478510
@@ -225,7 +257,7 @@ GameObject:
   - component: {fileID: 717478512}
   - component: {fileID: 717478511}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +309,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 10, y: 20}
+  m_Size: {x: 11.000001, y: 20}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -291,13 +323,65 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717478510}
   serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.0000005, y: 9.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 160321679}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1309102129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1309102130}
+  - component: {fileID: 1309102131}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1309102130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309102129}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.25, y: 0, z: 0}
+  m_LocalPosition: {x: 6, y: 17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1309102131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309102129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e5dd076c3a77c41b99ba1904224a89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tetrominoes:
+  - {fileID: 7186378981219738371, guid: 092455e84b24725439b6c691064672bb, type: 3}
+  - {fileID: 3030663074930949412, guid: 717f4c2c104716b4fbf0403fc63b9cd7, type: 3}
+  - {fileID: 7158153956741774188, guid: b503789dd6c06bb4aad6f4de169f6167, type: 3}
+  - {fileID: 7158153956741774188, guid: 1d8feb46bd2e14a4b8bbfc88c60997af, type: 3}
+  - {fileID: 6644629850889122921, guid: 0cf48143c663024438d3e30dd1ca1db7, type: 3}
+  - {fileID: 6644629850889122921, guid: 387421d32e515804290e4099f4084a9c, type: 3}
+  - {fileID: 6729764986452464115, guid: d1fd193a213b5a44c8f445b3d8fa3072, type: 3}
 --- !u!1001 &1500108191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,15 +392,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 126122096221082112, guid: 0cf48143c663024438d3e30dd1ca1db7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13056368
+      value: 4.54
       objectReference: {fileID: 0}
     - target: {fileID: 126122096221082112, guid: 0cf48143c663024438d3e30dd1ca1db7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04813245
+      value: 57.57
       objectReference: {fileID: 0}
     - target: {fileID: 126122096221082112, guid: 0cf48143c663024438d3e30dd1ca1db7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.01414787
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 126122096221082112, guid: 0cf48143c663024438d3e30dd1ca1db7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -371,13 +455,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tetromino L Reverse
       objectReference: {fileID: 0}
+    - target: {fileID: 7158153956741774188, guid: b503789dd6c06bb4aad6f4de169f6167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7928592621910455071, guid: b503789dd6c06bb4aad6f4de169f6167, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13056368
+      value: 4.54
       objectReference: {fileID: 0}
     - target: {fileID: 7928592621910455071, guid: b503789dd6c06bb4aad6f4de169f6167, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04813245
+      value: 57.57
       objectReference: {fileID: 0}
     - target: {fileID: 7928592621910455071, guid: b503789dd6c06bb4aad6f4de169f6167, type: 3}
       propertyPath: m_LocalPosition.z
@@ -522,13 +610,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tetromino I
       objectReference: {fileID: 0}
+    - target: {fileID: 3030663074930949412, guid: 717f4c2c104716b4fbf0403fc63b9cd7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4793574525974797372, guid: 717f4c2c104716b4fbf0403fc63b9cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13056368
+      value: 4.54
       objectReference: {fileID: 0}
     - target: {fileID: 4793574525974797372, guid: 717f4c2c104716b4fbf0403fc63b9cd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04813245
+      value: 57.57
       objectReference: {fileID: 0}
     - target: {fileID: 4793574525974797372, guid: 717f4c2c104716b4fbf0403fc63b9cd7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -577,11 +669,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3538641759284391547, guid: d1fd193a213b5a44c8f445b3d8fa3072, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.75
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 3538641759284391547, guid: d1fd193a213b5a44c8f445b3d8fa3072, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.7499995
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3538641759284391547, guid: d1fd193a213b5a44c8f445b3d8fa3072, type: 3}
       propertyPath: m_LocalPosition.z
@@ -619,6 +711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tetromino T
       objectReference: {fileID: 0}
+    - target: {fileID: 6729764986452464115, guid: d1fd193a213b5a44c8f445b3d8fa3072, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -634,11 +730,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3841068211997435817, guid: 092455e84b24725439b6c691064672bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13056368
+      value: 4.59
       objectReference: {fileID: 0}
     - target: {fileID: 3841068211997435817, guid: 092455e84b24725439b6c691064672bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04813245
+      value: 57.62
       objectReference: {fileID: 0}
     - target: {fileID: 3841068211997435817, guid: 092455e84b24725439b6c691064672bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -697,13 +793,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tetromino L
       objectReference: {fileID: 0}
+    - target: {fileID: 7158153956741774188, guid: 1d8feb46bd2e14a4b8bbfc88c60997af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7928592621910455071, guid: 1d8feb46bd2e14a4b8bbfc88c60997af, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13056368
+      value: 4.54
       objectReference: {fileID: 0}
     - target: {fileID: 7928592621910455071, guid: 1d8feb46bd2e14a4b8bbfc88c60997af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04813245
+      value: 57.57
       objectReference: {fileID: 0}
     - target: {fileID: 7928592621910455071, guid: 1d8feb46bd2e14a4b8bbfc88c60997af, type: 3}
       propertyPath: m_LocalPosition.z
@@ -752,15 +852,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 126122096221082112, guid: 387421d32e515804290e4099f4084a9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13056368
+      value: 4.54
       objectReference: {fileID: 0}
     - target: {fileID: 126122096221082112, guid: 387421d32e515804290e4099f4084a9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04813245
+      value: 57.57
       objectReference: {fileID: 0}
     - target: {fileID: 126122096221082112, guid: 387421d32e515804290e4099f4084a9c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.01414787
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 126122096221082112, guid: 387421d32e515804290e4099f4084a9c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -794,6 +894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tetromino S
       objectReference: {fileID: 0}
+    - target: {fileID: 6644629850889122921, guid: 387421d32e515804290e4099f4084a9c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -805,11 +909,12 @@ SceneRoots:
   m_Roots:
   - {fileID: 141922907}
   - {fileID: 2119523724}
-  - {fileID: 717478512}
   - {fileID: 1083716543845973704}
   - {fileID: 8425798795758371466}
   - {fileID: 1500108191}
   - {fileID: 915399701656167859}
   - {fileID: 6648899990805420181}
-  - {fileID: 3005030725401095477}
   - {fileID: 1799208695}
+  - {fileID: 3005030725401095477}
+  - {fileID: 1309102130}
+  - {fileID: 160321679}
