@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.Metadata;
 
 public class TetrisBlock : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class TetrisBlock : MonoBehaviour
     private float _previousTime;
     public float fallTime = 0.8f;
     public static int height = 20;
-    public static int width = 12;
+    public static int width = 10;
     [SerializeField] bool canTotalyTurn;
     [SerializeField] private bool primary = true;
     [SerializeField] private bool canTurn = true;
@@ -97,10 +98,61 @@ public class TetrisBlock : MonoBehaviour
             {
                 transform.position -= new Vector3(0, -1, 0);
                 AddToGrid();
+                CheckForLines();
                 this.enabled = false;
                 FindObjectOfType<SpawnTetromino>().NewTetromino();
             }
             _previousTime = Time.time;
+        }
+    }
+
+    private void CheckForLines()
+    {
+        for (int i = height-1; i >= 0; i--)
+        {
+            if (HasLine(i))
+            {
+                DeleteLine(i);
+                RowDown(i);
+            }
+        }
+    }
+
+    private bool HasLine(int i)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            if (grid[j, i] == null)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void DeleteLine(int i)
+    {
+
+        for (int j = 0; j < width; j++)
+        {
+            Destroy(grid[j, i].gameObject);
+            grid[j, i] = null;
+        }
+    }
+
+    void RowDown(int i)
+    {
+        for (int y = 0; y < height; y++)
+        {
+            for (int j = 0; j < width; j++)
+            {
+                if (grid[j,y] != null)
+                {
+                    grid[j, y - 1] = grid[j, y];
+                    grid[j, y] = null;
+                    grid[j, y - 1].transform.position -= new Vector3(0, 1, 0);
+                }
+            }
         }
     }
 
@@ -111,8 +163,19 @@ public class TetrisBlock : MonoBehaviour
             int roundedX = Mathf.RoundToInt(children.transform.position.x);
             int roundedY = Mathf.RoundToInt(children.transform.position.y);
 
-            grid[roundedX, roundedY] = children;
+            
+                grid[roundedX, roundedY] = children;
+
+                for (int i = 0; i < grid.Length; i++)
+                {
+                    print(grid[roundedX, roundedY]);
+
+                }
+            
+
+           
         }
+        
     }
 
     bool ValidMove()
@@ -123,13 +186,13 @@ public class TetrisBlock : MonoBehaviour
             int roundedY = Mathf.RoundToInt(children.transform.position.y);
 
 
-            if (roundedX <= 0 || roundedX >= width)
+            if (roundedX <= -1f || roundedX >= width)
             {
                 return false;
             }
 
 
-            if (roundedY <= 0f)
+            if (roundedY <= -1f)
             {
                 return false;
             }
