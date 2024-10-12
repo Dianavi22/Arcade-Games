@@ -30,6 +30,7 @@ public class SimonGameManager : MonoBehaviour
 
     private void NewRound()
     {
+        idPushButton = 0;
         isRounding = true;
         isNewRound = false;
         _idNodeList.Add(Random.Range(0, 6));
@@ -50,21 +51,19 @@ public class SimonGameManager : MonoBehaviour
     {
         if (_idNodeListPlayer[idPushButton] != _idNodeList[idPushButton])
         {
+
             GameOver();
         }
-        else
-        {
-            if (_idNodeListPlayer.Count == _idNodeList.Count)
+        else if (_idNodeListPlayer.Count == _idNodeList.Count)
             {
+
                 isRounding = true;
                 isNewRound = false;
                 _idNodeListPlayer.Clear();
                 Invoke("NewRound", 1);
-            }
+            
         }
-        
-
-        
+        idPushButton++;
     }
 
     private void GameOver()

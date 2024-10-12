@@ -28,6 +28,7 @@ public class Node : MonoBehaviour
             StartCoroutine(ButtonColor());
             _gameManager._idNodeListPlayer.Add(idButton);
             _gameManager.VerifSimon();
+
         }
         else { return; }
        
