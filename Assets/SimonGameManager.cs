@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -11,6 +12,8 @@ public class SimonGameManager : MonoBehaviour
     public bool isNewRound = false;
     [SerializeField] List<GameObject> _buttonsList = new List<GameObject>();
     public bool isRounding;
+    public int idPushButton;
+    [SerializeField] GameObject _gameOverCanvas;
     void Start()
     {
         isNewRound = true;
@@ -28,7 +31,7 @@ public class SimonGameManager : MonoBehaviour
     private void NewRound()
     {
         isRounding = true;
-        isNewRound = false ;
+        isNewRound = false;
         _idNodeList.Add(Random.Range(0, 6));
         StartCoroutine(ShowChain());
     }
@@ -45,12 +48,28 @@ public class SimonGameManager : MonoBehaviour
 
     public void VerifSimon()
     {
-        for (int i = 0; i < _idNodeList.Count; i++)
+        if (_idNodeListPlayer[idPushButton] != _idNodeList[idPushButton])
         {
-            if (_idNodeList[i] == _idNodeListPlayer[i])
+            GameOver();
+        }
+        else
+        {
+            if (_idNodeListPlayer.Count == _idNodeList.Count)
             {
-
+                isRounding = true;
+                isNewRound = false;
+                _idNodeListPlayer.Clear();
+                Invoke("NewRound", 1);
             }
         }
+        
+
+        
+    }
+
+    private void GameOver()
+    {
+        _gameOverCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
 }
